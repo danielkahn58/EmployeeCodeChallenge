@@ -62,6 +62,8 @@ namespace CodeChallenge.Controllers
         [Route("{id}/reportingstructure")]
         public IActionResult GetReportingStructureByEmployeeId(String id)
         {
+            _logger.LogDebug($"Received Reporting Structure get request for '{id}'");
+
             ReportingStructure rs = _employeeService.GetReportingStructure(id);
             
             if (rs == null)

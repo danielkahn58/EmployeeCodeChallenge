@@ -68,10 +68,11 @@ namespace CodeChallenge.Services
             return rs;
         }
 
+        // This recursively finds all the reports of an employee
         public int GetTotalReports(Employee employee)
         {
             int totalReports = 0;
-            List<Employee> directReports = _employeeRepository.GetById(employee.EmployeeId).DirectReports; // Note : an inefficient 
+            List<Employee> directReports = _employeeRepository.GetById(employee.EmployeeId).DirectReports; // This may be inefficient for a large reporting structure
 
             if (directReports != null)
             {

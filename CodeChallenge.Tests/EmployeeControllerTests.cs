@@ -160,15 +160,7 @@ namespace CodeCodeChallenge.Tests.Integration
         [TestMethod]
         public void CreateCompensation_Returns_Created()
         {
-                // Arrange
-            /*    var employee = new Employee()
-            {
-                EmployeeId = "03aa1462-ffa9-4978-901b-7c001562cf6f",
-                Department = "Engineering",
-                FirstName = "Pete",
-                LastName = "Best",
-                Position = "Developer VI",
-            };*/
+            // Arrange
             var compensation = new Compensation()
             {
                 EmployeeId = "16a596ae-edd3-4847-99fe-c4518e82c86f",
@@ -178,7 +170,6 @@ namespace CodeCodeChallenge.Tests.Integration
 
             var requestContent = new JsonSerialization().ToJson(compensation);
 
-            // Execute
             // Execute
             var postRequestTask = _httpClient.PostAsync($"api/compensation",
                new StringContent(requestContent, Encoding.UTF8, "application/json"));

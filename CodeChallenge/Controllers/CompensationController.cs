@@ -35,7 +35,7 @@ namespace CodeChallenge.Controllers
         [HttpGet("{employeeId}", Name = "GetByEmployeeId")]
         public IActionResult GetByEmployeeId(String employeeId)
         {
-            //_logger.LogDebug($"Received compensation create request to add a salary of ' {comp.Salary} ' for ' {comp.Employee.FirstName} {comp.Employee.LastName}'");
+            _logger.LogDebug($"Received compensation get request for ' {employeeId}'");
 
             Compensation comp = _compensationService.GetByEmployeeId(employeeId);
 
